@@ -1,18 +1,16 @@
 <script lang="ts">
-  import clsx from "clsx";
-  // import Portal from "svelte-portal";
+  import clsx from 'clsx';
+  import { page } from '$app/stores';
+  import { Body } from 'svelte-body';
+  // import Portal from 'svelte-portal';
 	import { fly } from 'svelte/transition';
-  // import { NavigatorLocation, useLocation } from "svelte-navigator";
-  import type { Readable } from "svelte/store";
-  import MenuList from "../MenuList";
+  import MenuList from '../MenuList';
 
-  // const location: Readable<NavigatorLocation> = useLocation();
   let toggle: boolean = false;
-
-  // $: if ($location) toggle = false;
-  // $: document.body.classList.toggle('noscroll', toggle);
+  $: if ($page) toggle = false;
 </script>
 
+<Body class={clsx({ noscroll: toggle })} /> <!-- set document body class -->
 <button class={clsx({ toggled: toggle })} aria-describedby="button-description" on:click={() => toggle = !toggle}>
   <span class="menu-icon"></span>
   <span id="button-description" class="hidden">Click to toggle menu</span>
