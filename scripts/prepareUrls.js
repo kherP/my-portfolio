@@ -7,7 +7,7 @@ const pkg = require('../package.json');
 
 const headers = {
   "Accept": "application/vnd.github.v3+json",
-  "Authorization": 'Basic ' + 'a2hlcnA6Z2hwX0dhcW56R2JzMHc2U2JEbUpvVmpTSUVLbXhMZXBtTzI3enVpeg==',
+  "Authorization": 'Basic ' + '#{token}#',
 };
 
 const res = await fetch(pkg.config.rootUrl, { headers });
