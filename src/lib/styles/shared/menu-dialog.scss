@@ -1,0 +1,41 @@
+@use "src/lib/styles/variables" as *;
+
+.menu-dialog {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: $modal-zindex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale(0);
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: $modal-bg;
+  transition: transform .2s ease-out;
+  &.show {
+    transform: scale(1);
+  }
+}
+:global(.vertical-menu-list) {
+  flex: 1;
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-items: center;
+  align-items: center;
+  :global(li) {
+    flex: 1;
+    font-weight: 600;
+    font-size: 2em;
+    :global(a) {
+      color: $white;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

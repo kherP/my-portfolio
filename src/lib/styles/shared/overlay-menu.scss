@@ -1,0 +1,35 @@
+@use "src/lib/styles/variables" as *;
+@import "src/lib/styles/shared/mixin";
+
+.menu-icon {
+  @include line-content();
+  position: relative;
+  transition: background-color .2s ease-in;
+  &::after, &::before {
+    content: " ";
+    position: absolute;
+    transition: transform .2s ease-in-out;
+    @include line-content();
+  }
+  &::before {
+    top: -0.5rem;
+  }
+  &::after {
+    bottom: -0.5rem;
+  }
+}
+.toggled {
+  z-index: $tooltip-zindex;
+  background-color: $white;
+  .menu-icon {
+    background-color: transparent;
+    &::before {
+      transform: rotate(-45deg);
+      top: unset;
+    }
+    &::after {
+      transform: rotate(45deg);
+      bottom: unset;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@use "src/lib/styles/variables" as *;
+
+html, body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: $gray-900;
+  padding: 1em;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+@media (min-width: $screen-sm) {
+  body {
+    max-width: $screen-lg;
+    padding: 1em 3em;
+  }
+}
