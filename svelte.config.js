@@ -13,15 +13,14 @@ const config = {
 
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
-		appDir: 'app',
 		target: '#svelte',
 		paths: {
 			base: dev ? '' : `/${pkg.name}`
 		},
 		adapter: adapter({
 			// default options are shown
-			pages: 'build',
-			assets: 'build',
+			pages: pkg.config.outputFolder,
+			assets: pkg.config.outputFolder,
 			fallback: null
 	}),
 	}

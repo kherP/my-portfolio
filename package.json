@@ -4,9 +4,11 @@
   "scripts": {
     "dev": "svelte-kit dev",
     "init-urls": "node ./scripts/prepareUrls.js",
+    "buildWrap": "node ./scripts/postBuild.js",
     "postinit-urls": "prettier --write $npm_package_config_endpointsIndexPath",
     "prebuild": "npm run init-urls",
     "build": "svelte-kit build",
+    "postbuild": "npm run buildWrap",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -38,6 +40,7 @@
   },
   "config": {
     "rootUrl": "https://api.github.com/gists/b46b7b8695b6e87db6397127d473b2ca",
-    "endpointsIndexPath": "src/lib/constants/apiIndex.ts"
+    "endpointsIndexPath": "src/lib/constants/apiIndex.ts",
+    "outputFolder": "build"
   }
 }

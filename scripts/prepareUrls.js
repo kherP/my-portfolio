@@ -20,7 +20,7 @@ Object.keys(data.files).map((key) => {
 });
 
 try {
-  writeFileSync(pkg.config.endpointsIndexPath, `export const endpoints = ${JSON.stringify(fileEndpoints)}`)
+  writeFileSync(pkg.config.endpointsIndexPath, `export const endpoints = ${JSON.stringify(fileEndpoints)}`);
   //file written successfully
 } catch (err) {
   console.error(err)
