@@ -2,13 +2,13 @@
   import SectionContainer from "$lib/components/common/SectionContainer";
   import Skill from "./Skill.svelte";
   import routes from "$lib/constants/routes";
-  import { apiConfigs } from "$lib/constants/apiConfigs";
+  import { appConfig } from "$lib/constants/appConfig";
   import { onMount } from 'svelte';
   export let showMore: boolean = false;
   export let data: SkillItem[] = [];
   let skills: SkillItem[] = [];
   onMount(() => {
-    skills = showMore ? data.slice(0, apiConfigs.defaultSkillCount) : data
+    skills = showMore ? data.slice(0, appConfig.defaultSkillCount) : data
   });
 </script>
 

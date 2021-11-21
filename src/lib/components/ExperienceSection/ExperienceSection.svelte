@@ -3,7 +3,7 @@
   import SectionContainer from '$lib/components/common/SectionContainer';
   import { H2, H3 } from '$lib/components/common/HeaderElements';
   import routes from '$lib/constants/routes';
-  import { apiConfigs } from '$lib/constants/apiConfigs';
+  import { appConfig } from '$lib/constants/appConfig';
   import { onMount } from 'svelte';
   export let showMore: boolean = false;
   export let data: ExperienceItem[] = [];
@@ -11,7 +11,7 @@
   let subHeaderTag: typeof H2 | typeof H3 = showMore ? H3 : H2;
 
   onMount(() => {
-    list = showMore ? data.slice(0, apiConfigs.defaultExperienceCount) : data
+    list = showMore ? data.slice(0, appConfig.defaultExperienceCount) : data
   });
 </script>
 

@@ -1,5 +1,5 @@
 
-import { apiConfigs } from '$lib/constants/apiConfigs';
+import { appConfig } from '$lib/constants/appConfig';
 import { DetailsStore } from '$lib/stores/details.store';
 import { ExperiencesStore } from '$lib/stores/experiences.store';
 import { SkillsStore } from '$lib/stores/skills.store';
@@ -30,7 +30,7 @@ const loadFiles = (gistResponse: GistResponse) => {
 };
 
 const getFilesDetails = async () => {
-	const res = await fetch(apiConfigs.rootURL, { headers: apiConfigs.header });
+	const res = await fetch(appConfig.rootURL, { headers: appConfig.header });
   const data = await res.json();
   loadFiles(data);
 	return {

@@ -61,11 +61,10 @@ declare interface Routes {
   skill: string;
 }
 
-declare interface APIConfigs {
-  rootURL: string;
-  header: HeadersInit;
+declare interface AppConfig {
   defaultExperienceCount: number;
   defaultSkillCount: number;
+  isDevelopment: boolean;
 }
 
 declare interface APIResponse<T> {
