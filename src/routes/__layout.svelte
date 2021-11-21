@@ -7,12 +7,11 @@
 	import type { LoadInput } from '@sveltejs/kit';
 	// utils
 	import { httpGetDetails } from '$lib/utils/http.utils';
-	import routes from '$lib/constants/routes';
+	import { formatRoute } from "$lib/utils/route.utils";
+	import { capitalizeFirstLetter } from '$lib/utils/string.utils';
 	
-	const capitalizeFirstLetter = (string: string) => string.charAt(0).toUpperCase() + string.slice(1);
-
 	const formatPageTitle = (path: string, brand: string) => {
-		if (path === routes.root) {
+		if (path === "/") {
 			return brand;
 		}
 		const paths: string[] = path.split("/");
@@ -36,6 +35,7 @@
 </script>
 
 <svelte:head>
+	<link rel="icon" href={formatRoute("/favicon.png")} />
 	<title>{pageTitle}</title>
 </svelte:head>
 <Header {details} />

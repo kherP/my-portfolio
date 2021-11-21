@@ -1,7 +1,4 @@
-import { base } from '$app/paths';
-import { appConfig } from './appConfig';
-
-const formatRoute = (route: string) => appConfig.isDevelopment ? route : `${base}${route}`;
+import { formatRoute } from "$lib/utils/route.utils";
 
 const routes: Routes = {
   root: formatRoute("/"),
