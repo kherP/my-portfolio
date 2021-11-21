@@ -1,10 +1,11 @@
 <script lang="ts">
   import Menu from "$lib/components/common/Menu";
+  import routes from "$lib/constants/routes";
   export let details: AppDetails;
 </script>
 
 <header>
-  <a href="/">{details?.brand}</a>
+  <a href={routes.root}>{details?.brand}</a>
   <Menu />
 </header>
 
