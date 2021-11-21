@@ -40,8 +40,8 @@
     touch-action: none;
 	}
   button {
-    height: 2.5em;
-    width: 2.5em;
+    height: 3rem;
+    width: 3rem;
     position: relative;
     background: transparent;
     border: 0;
