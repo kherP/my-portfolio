@@ -3,6 +3,7 @@ import adapter from '@sveltejs/adapter-static';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const pkg = require('./package.json');
+const { endpoints } = require(`./${pkg.config.dynamicEndpointsIndexPath}`);
 const dev = process.env.NODE_ENV === 'development';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -20,14 +21,9 @@ const config = {
 		prerender: {
 			crawl: true,
 			enabled: true,
-			pages: [
+			entries: [
         "*",
-        "/experience/Occupational%20pension%20portal",
-        "/experience/Private%20pension%20portal",
-        "/experience/User%20roles%20and%20management%20portal",
-        "/experience/Customer%20service%20platform",
-        "/experience/React%20components%20library",
-        "/experience/Class%20Management%20and%20Enrolment%20Portal"
+				...endpoints
       ],
 			onError: 'fail'
 		},

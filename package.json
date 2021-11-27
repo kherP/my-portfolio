@@ -42,6 +42,9 @@
   "config": {
     "rootUrl": "https://api.github.com/gists/b46b7b8695b6e87db6397127d473b2ca",
     "endpointsIndexPath": "src/lib/constants/apiIndex.ts",
+    "dynamicEndpointsIndexPath": "dynamic-route-index.cjs",
+    "dynamicRoutePrefix": "/experience/",
+    "staticRoutes": ["details", "experiences", "skills"],
     "outputFolder": "build"
   }
 }
