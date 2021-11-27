@@ -4,6 +4,7 @@ declare interface AppDetails {
   subheader: string;
   description: string;
   copyrightText: string;
+  imageAttribution: string;
   email: string;
 }
 
@@ -15,6 +16,7 @@ declare interface ExperienceItem {
   image: string;
   name: string;
   description: string;
+  techstack: string[];
 }
 
 declare interface SkillItem {

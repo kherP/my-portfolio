@@ -2,10 +2,11 @@
   import type { HeaderElements } from "$lib/@types/header";
   import routes from "$lib/constants/routes";
   import ChevronRightRound from "../common/ChevronRightRound";
+  import Chips from "../common/Chips";
   export let details: ExperienceItem;
   export let reverted: boolean = false;
-  export let headerTag: HeaderElements;
-  const { image: src, name, description }: ExperienceItem = details;
+  export let headerTag: HeaderElements; 
+  const { image: src, name, description, techstack }: ExperienceItem = details;
 </script>
 
 <article class={reverted ? 'reverted' : ''}>
@@ -13,16 +14,21 @@
     <img {src} alt={name} />
   </figure>
   <div class="content">
-    <svelte:component this={headerTag} ref="h3">
-      {name}
-    </svelte:component>
-    <p>{description}</p> <!-- // TODO: to set max height -->
-    <a sveltekit:prefetch href={routes.experience.replace(":id", name)}>
-      <span>Learn more about this case</span>
-      <span class="icon-wrapper">
-        <ChevronRightRound />
-      </span>
-    </a>
+    <section aria-label={`Description of ${name}`}>
+      <svelte:component this={headerTag} ref="h3">
+        {name}
+      </svelte:component>
+      <p>{@html description}</p> <!-- // TODO: to set max height -->
+      <a sveltekit:prefetch href={routes.experience.replace(":id", name)}>
+        <span>Learn more about this case</span>
+        <span class="icon-wrapper">
+          <ChevronRightRound />
+        </span>
+      </a>
+    </section>
+    <section aria-label={`Tech stack of ${name}`}>
+      <Chips list={techstack} />
+    </section>
   </div>
 </article>
 
@@ -36,6 +42,8 @@
       flex: 1;
       img {
         max-width: 100%;
+        width: auto;
+        height: 450px;
       }
     }
     .content {
@@ -58,6 +66,7 @@
       }
       p {
         font-size: 1.5em;
+        margin-bottom: 3rem;
       }
     }
   }

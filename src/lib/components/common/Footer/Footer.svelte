@@ -5,11 +5,13 @@
 
 <footer>
   <p>&copy; {currentYear} {details?.copyrightText}</p>
+  <p>{@html details?.imageAttribution}</p>
 </footer>
 
 <style lang="scss">
-footer {
-  text-align: center;
-  padding: 3em 0;
-}
+  @use 'src/lib/styles/variables' as *;
+  footer {
+    text-align: center;
+    padding: 3em 0;
+  }
 </style>

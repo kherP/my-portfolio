@@ -1,32 +1,32 @@
 <script lang="ts">
   export let data: ExperienceDetailsProps;
 </script>
+
 <header>
   <h1>{data?.name}</h1>
   <figure>
-    <img src={data?.image} alt="">
-    <figcaption><a href="https://www.freepik.com/vectors/fitness">Fitness vector created by stories - www.freepik.com</a></figcaption>
+    <img src={data?.image} alt={data?.name}>
   </figure>
 </header>
 <section>
   <h2>Overview</h2>
-  <p>{data?.overview}</p>
+  <p>{@html data?.overview}</p>
 </section>
 <section>
   <h2>Client</h2>
-  <p>{data?.client}</p>
+  <p>{@html data?.client}</p>
 </section>
 <section>
   <h2>My role</h2>
-  <p>{data?.role}</p>
+  <p>{@html data?.role}</p>
 </section>
 <section>
   <h2>Challenges</h2>
-  <p>{data?.challenges}</p>
+  <p>{@html data?.challenges}</p>
 </section>
 <section>
   <h2>The result</h2>
-  <p>{data?.result}</p>
+  <p>{@html data?.result}</p>
 </section>
 
 <style type="scss">
@@ -44,12 +44,13 @@
     img {
       max-width: 100%;
     }
-    figcaption {
-      font-size: xx-small;
-    }
   }
   h2 {
     margin-top: 3rem;
+  }
+
+  p {
+    font-size: larger;
   }
 	@media (max-width: $screen-sm) {
 		header {

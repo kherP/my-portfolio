@@ -14,7 +14,7 @@
 
 <SectionContainer {showMore} viewMorePath={routes.skill}>
   <svelte:fragment slot="header">
-    Skills
+    Technologies I use
   </svelte:fragment>
   <svelte:fragment slot="content">
     <dl>

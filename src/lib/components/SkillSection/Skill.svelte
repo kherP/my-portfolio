@@ -25,6 +25,7 @@
     position:relative;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     color: transparent;
     height: 12.5em;
     width: 12.5em;
