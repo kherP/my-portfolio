@@ -19,7 +19,7 @@
         {name}
       </svelte:component>
       <p>{@html description}</p> <!-- // TODO: to set max height -->
-      <a sveltekit:prefetch href={routes.experience.replace(":id", name)}>
+      <a href={routes.experience.replace(":id", name)}>
         <span>Learn more about this case</span>
         <span class="icon-wrapper">
           <ChevronRightRound />
