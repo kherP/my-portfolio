@@ -42,8 +42,8 @@
       flex: 1;
       img {
         max-width: 100%;
-        width: auto;
-        height: 450px;
+        width: 100%;
+        height: auto;
       }
     }
     .content {

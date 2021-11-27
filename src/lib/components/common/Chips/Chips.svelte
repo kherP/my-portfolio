@@ -17,5 +17,6 @@ import Chip from "./Chip.svelte";
     padding-inline-start: 0;
     margin-top: 3rem;
     gap: 0.5rem;
+    flex-wrap: wrap;
   }
 </style>
