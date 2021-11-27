@@ -17,6 +17,12 @@ const config = {
 		paths: {
 			base: dev ? '' : `/${pkg.name}`
 		},
+		prerender: {
+			crawl: true,
+			enabled: true,
+			entries: ['*'],
+			onError: 'fail'
+		},
 		adapter: adapter({
 			// default options are shown
 			pages: pkg.config.outputFolder,
