@@ -20,7 +20,15 @@ const config = {
 		prerender: {
 			crawl: true,
 			enabled: true,
-			entries: ['*'],
+			pages: [
+        "*",
+        "/experience/Occupational%20pension%20portal",
+        "/experience/Private%20pension%20portal",
+        "/experience/User%20roles%20and%20management%20portal",
+        "/experience/Customer%20service%20platform",
+        "/experience/React%20components%20library",
+        "/experience/Class%20Management%20and%20Enrolment%20Portal"
+      ],
 			onError: 'fail'
 		},
 		adapter: adapter({
