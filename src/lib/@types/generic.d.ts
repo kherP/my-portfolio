@@ -29,6 +29,7 @@ declare interface SkillItem {
 declare interface ExperienceDetailsProps {
   image: string;
   name: string;
+  techstack: string[];
   overview: string;
   client: string;
   role: string;

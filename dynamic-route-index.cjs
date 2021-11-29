@@ -1,1 +1,4 @@
-exports.endpoints = ["/experience/Occupational pension portal"];
+exports.endpoints = [
+	'/experience/Occupational pension portal',
+	'/experience/Private pension portal'
+];

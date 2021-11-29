@@ -12,6 +12,7 @@
   @use 'src/lib/styles/variables' as *;
   footer {
     text-align: center;
+    margin-top: 3rem;
     padding: 3em 0;
   }
 </style>

@@ -5,7 +5,7 @@
     "dev": "svelte-kit dev",
     "init-urls": "node ./scripts/prepareUrls.js",
     "buildWrap": "node ./scripts/postBuild.js",
-    "postinit-urls": "prettier --write $npm_package_config_endpointsIndexPath",
+    "postinit-urls": "prettier --write $npm_package_config_endpointsIndexPath $npm_package_config_dynamicEndpointsIndexPath",
     "prebuild": "npm run init-urls",
     "build": "svelte-kit build",
     "postbuild": "npm run buildWrap",
