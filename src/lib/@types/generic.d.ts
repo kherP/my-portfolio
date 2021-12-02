@@ -62,6 +62,7 @@ declare interface Routes {
   experiences: string;
   experience: string;
   skill: string;
+  contactMe: string;
 }
 
 declare interface AppConfig {

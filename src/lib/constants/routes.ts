@@ -4,7 +4,8 @@ const routes: Routes = {
   root: formatRoute("/"),
   experiences: formatRoute("/experience"),
   experience: formatRoute("/experience/:id"),
-  skill: formatRoute("/skills")
+  skill: formatRoute("/skills"),
+  contactMe: formatRoute("/contact-me"),
 };
 
 export default routes;
