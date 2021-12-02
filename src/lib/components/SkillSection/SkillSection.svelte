@@ -12,26 +12,27 @@
   });
 </script>
 
-<SectionContainer {showMore} viewMorePath={routes.skill}>
+<SectionContainer {showMore} viewMorePath={routes.skill} viewMoreText="View more technologies">
   <svelte:fragment slot="header">
     Technologies I use
   </svelte:fragment>
   <svelte:fragment slot="content">
-    <dl>
+    <ul>
       {#each skills as skill}
         <Skill details={skill} />
       {/each}
-    </dl>
+    </ul>
   </svelte:fragment>
 </SectionContainer>
 
 <style type="scss">
   @use 'src/lib/styles/variables' as *;
-  dl {
+  ul {
     display: flex;
     flex-wrap: wrap;
     gap: 5em 3em;
     place-content: center;
+    list-style: none;
     @media (max-width: $screen-sm) {
       gap: 2em;
     }

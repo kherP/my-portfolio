@@ -15,7 +15,7 @@
   });
 </script>
 
-<SectionContainer {showMore} viewMorePath={routes.experiences}>
+<SectionContainer {showMore} viewMorePath={routes.experiences} viewMoreText="View more experience">
   <svelte:fragment slot="header">
     Experience
   </svelte:fragment>

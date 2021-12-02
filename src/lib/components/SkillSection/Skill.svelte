@@ -1,16 +1,15 @@
 <script lang="ts">
   export let details: SkillItem;
-  const { image, name, description, proficiency }: SkillItem = details;
+  const { image, name }: SkillItem = details;
 </script>
 
-<div>
-  <dt style="background-image: url({image});">{name}</dt>
-  <dd>{description}</dd>
-</div>
+<li>
+  <div style="background-image: url({image});">{name}</div>
+</li>
 
 <style lang="scss">
   @use 'src/lib/styles/variables' as *;
-  div {
+  li {
     flex: 0 0 12.5rem;
     flex-basis: 30%;
     text-align: center;
@@ -21,7 +20,7 @@
       flex-basis: 25%;
     }
   }
-  dt {
+  div {
     position:relative;
     background-size: cover;
     background-repeat: no-repeat;

@@ -3,6 +3,7 @@
   import { H1, H2 } from "../HeaderElements";
   export let showMore: boolean = false;
   export let viewMorePath: string = "";
+  export let viewMoreText: string = "View more";
   const headerTag: HeaderElements = showMore ? H2 : H1;
 </script>
 
@@ -15,7 +16,7 @@
   </slot>
   {#if showMore}
     <footer>
-      <a sveltekit:prefetch class="show-more-link" href={viewMorePath}>View more</a>
+      <a sveltekit:prefetch class="show-more-link" href={viewMorePath}>{viewMoreText}</a>
     </footer>
   {/if}
 </section>
