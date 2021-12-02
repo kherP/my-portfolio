@@ -7,16 +7,16 @@
 <h1>Contact me</h1>
 <ul>
   <li>
-    <a href="hi"><LinkedInIcon /></a>
+    <a href="https://my.linkedin.com/in/kher-phay-chang" target="_blank"><LinkedInIcon /></a>
   </li>
   <li>
-    <a href="hi"><GithubIcon /></a>
+    <a href="https://github.com/kherP" target="_blank"><GithubIcon /></a>
   </li>
+  <!-- <li>
+    <a href="hi" rel="external"><DocumentIcon /></a> TODO: add download link
+  </li> -->
   <li>
-    <a href="hi"><DocumentIcon /></a>
-  </li>
-  <li>
-    <a href="hi"><PaperPlaneIcon /></a>
+    <a href="mailto:kayphay92@gmail.com?subject=Hello!"><PaperPlaneIcon /></a>
   </li>
 </ul>
 

@@ -36,7 +36,4 @@
       line-height: 7.5rem;
     }
   }
-  dd {
-    margin: 0;
-  }
 </style>
