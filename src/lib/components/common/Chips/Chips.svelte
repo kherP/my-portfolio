@@ -1,7 +1,5 @@
 <script lang="ts">
-import Chip from "./Chip.svelte";
-
-
+  import Chip from "./Chip.svelte";
   export let list: string[] = [];
 </script>
 <ul>

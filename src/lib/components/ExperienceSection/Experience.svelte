@@ -18,6 +18,9 @@
       <svelte:component this={headerTag} ref="h3">
         {name}
       </svelte:component>
+      <section aria-label={`Tech stack of ${name}`}>
+        <Chips list={techstack} />
+      </section>
       <p>{@html description}</p> <!-- // TODO: to set max height -->
       <a href={routes.experience.replace(":id", name)}>
         <span>Learn more about this case</span>
@@ -25,9 +28,6 @@
           <ChevronRightRound />
         </span>
       </a>
-    </section>
-    <section aria-label={`Tech stack of ${name}`}>
-      <Chips list={techstack} />
     </section>
   </div>
 </article>
