@@ -28,7 +28,6 @@
     text-align: left;
   }
   ul {
-    list-style: none;
     text-align: center;
     li {
       margin-bottom: 2rem;

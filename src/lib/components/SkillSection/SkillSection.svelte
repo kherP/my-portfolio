@@ -32,7 +32,6 @@
     flex-wrap: wrap;
     gap: 5em 3em;
     place-content: center;
-    list-style: none;
     @media (max-width: $screen-sm) {
       gap: 2em;
     }

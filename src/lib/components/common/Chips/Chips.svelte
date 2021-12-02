@@ -10,9 +10,7 @@
 
 <style lang="scss">
   ul {
-    list-style: none;
     display: flex;
-    padding-inline-start: 0;
     margin-top: 3rem;
     gap: 0.5rem;
     flex-wrap: wrap;

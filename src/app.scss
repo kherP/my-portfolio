@@ -23,6 +23,11 @@ a:hover {
 	text-decoration: underline;
 }
 
+ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
 @media (min-width: $screen-sm) {
   body {
     max-width: $screen-lg;
