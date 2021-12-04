@@ -6,7 +6,7 @@
 <ul>
   {#each data as item}
   <li>
-    <a aria-label={item.label} href={item.isFile && !item.isExternal ? formatRoute(item.url) : item.url} target={item.isExternal ? "_blank" : null} download={item.isFile}>
+    <a aria-label={item.label} href={item.isFile && !item.isExternal ? formatRoute(item.url) : item.url} target={item.isExternal ? "_blank" : null} download={item.isFile ? item.label : null}>
       {@html item.content}
       <span>{item.label}</span>
     </a>
