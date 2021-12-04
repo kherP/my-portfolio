@@ -5,13 +5,11 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<nav>
-  {#if windowWidth > 640}
-    <MenuList />
-  {:else}
-    <OverlayMenu />
-  {/if}
-</nav>
+{#if windowWidth > 640}
+  <MenuList />
+{:else}
+  <OverlayMenu />
+{/if}
 
 <style type="scss">
   @use 'src/lib/styles/variables' as *;
