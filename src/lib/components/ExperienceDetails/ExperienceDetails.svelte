@@ -30,11 +30,11 @@
 </section>
 <section>
   <h2>Challenges</h2>
-  <p>{@html data?.challenges}</p>
+  <div class="longer-details">{@html data?.challenges}</div>
 </section>
 <section>
   <h2>The result</h2>
-  <p>{@html data?.result}</p>
+  <div class="longer-details">{@html data?.result}</div>
 </section>
 
 <style type="scss">
@@ -85,9 +85,19 @@
     margin-top: 3rem;
   }
 
-  p {
+  p, .longer-details {
     font-size: larger;
-    line-height: 2rem;
+    line-height: 2.25rem;
+  }
+
+  .longer-details {
+    > :global(ul) {
+      list-style: square;
+      padding-inline-start: 1.5rem;
+      > :global(li) {
+        margin-bottom: 1.5rem;
+      }
+    }
   }
 	@media (max-width: $screen-sm) {
 		header {
