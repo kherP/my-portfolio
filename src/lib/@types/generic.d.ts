@@ -26,6 +26,14 @@ declare interface SkillItem {
   proficiency: number;
 }
 
+declare interface ContactDetailsItem {
+  label: string;
+  content: string;
+  url: string;
+  isExternal?: boolean;
+  isFile?: boolean;
+}
+
 declare interface ExperienceDetailsProps {
   image: string;
   name: string;

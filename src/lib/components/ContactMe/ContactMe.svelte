@@ -1,23 +1,17 @@
-<script>
-  import DocumentIcon from "../common/DocumentIcon";
-  import GithubIcon from "../common/GithubIcon";
-  import LinkedInIcon from "../common/LinkedInIcon";
-  import PaperPlaneIcon from "../common/PaperPlaneIcon";
+<script lang="ts">
+  import { formatRoute } from "$lib/utils/route.utils";
+  export let data: ContactDetailsItem[] = [];
 </script>
 <h1>Contact me</h1>
 <ul>
+  {#each data as item}
   <li>
-    <a href="https://my.linkedin.com/in/kher-phay-chang" target="_blank"><LinkedInIcon /></a>
+    <a aria-label={item.label} href={item.isFile && !item.isExternal ? formatRoute(item.url) : item.url} target={item.isExternal ? "_blank" : null} download={item.isFile}>
+      {@html item.content}
+      <span>{item.label}</span>
+    </a>
   </li>
-  <li>
-    <a href="https://github.com/kherP" target="_blank"><GithubIcon /></a>
-  </li>
-  <!-- <li>
-    <a href="hi" rel="external"><DocumentIcon /></a> TODO: add download link
-  </li> -->
-  <li>
-    <a href="mailto:kayphay92@gmail.com?subject=Hello!"><PaperPlaneIcon /></a>
-  </li>
+  {/each}
 </ul>
 
 <style lang="scss">
@@ -37,7 +31,11 @@
     :global(svg) {
       height: 7.5rem;
       width: auto;
-      color: #111;
+      fill: $gray-900;
+      flex: auto;
+    };
+    span {
+      display: block;
     }
   }
 </style>
