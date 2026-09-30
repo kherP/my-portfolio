@@ -1,7 +1,4 @@
-<script>
-  export let ref;
-</script>
-
-<h1 {ref}>
+<!-- extra attributes (class, id, data-*) pass through to the heading -->
+<h1 {...$$restProps}>
   <slot />
 </h1>

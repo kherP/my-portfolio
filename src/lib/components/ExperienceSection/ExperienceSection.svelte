@@ -4,35 +4,24 @@
   import { H2, H3 } from '$lib/components/common/HeaderElements';
   import routes from '$lib/constants/routes';
   import { appConfig } from '$lib/constants/appConfig';
-  import { onMount } from 'svelte';
   export let showMore: boolean = false;
   export let data: ExperienceItem[] = [];
-  let list: ExperienceItem[] = [];
   let subHeaderTag: typeof H2 | typeof H3 = showMore ? H3 : H2;
 
-  onMount(() => {
-    list = showMore ? data.slice(0, appConfig.defaultExperienceCount) : data
-  });
+  $: list = showMore ? data.slice(0, appConfig.defaultExperienceCount) : data;
 </script>
 
-<SectionContainer {showMore} viewMorePath={routes.experiences} viewMoreText="View more experience">
+<SectionContainer {showMore} cmd="ls ./work" viewMorePath={routes.experiences} viewMoreText="View all my work">
   <svelte:fragment slot="header">
-    Experience
+    things I've built
   </svelte:fragment>
   <svelte:fragment slot="content">
-    <ul>
+    <ol class="cards">
       {#each list as item, index}
         <li>
-          <Experience details={item} reverted={index % 2 > 0} headerTag={subHeaderTag} />
+          <Experience details={item} {index} headerTag={subHeaderTag} />
         </li>
       {/each}
-    </ul>
+    </ol>
   </svelte:fragment>
 </SectionContainer>
-
-<style type="scss">
-  ul {
-    list-style-type: none;
-    padding-inline-start: 0;
-  }
-</style>

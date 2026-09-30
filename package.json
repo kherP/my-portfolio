@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.21",
-    "@sveltejs/kit": "next",
+    "@sveltejs/kit": "1.0.0-next.196",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "eslint": "^7.32.0",
@@ -44,7 +44,7 @@
     "endpointsIndexPath": "src/lib/constants/apiIndex.ts",
     "dynamicEndpointsIndexPath": "dynamic-route-index.cjs",
     "dynamicRoutePrefix": "/experience/",
-    "staticRoutes": ["details", "experiences", "skills"],
+    "staticRoutes": ["details", "experiences", "skills", "contacts"],
     "outputFolder": "build"
   }
 }

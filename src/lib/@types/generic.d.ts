@@ -20,10 +20,13 @@ declare interface ExperienceItem {
 }
 
 declare interface SkillItem {
-  image: string;
   name: string;
   description: string;
-  proficiency: number;
+  caseStudy?: string;
+  // generated artwork kind, see src/lib/utils/art.js
+  art?: string;
+  // short "shipped" tags
+  highlights?: string[];
 }
 
 declare interface ContactDetailsItem {

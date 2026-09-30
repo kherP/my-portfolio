@@ -3,13 +3,14 @@
 	// components
 	import Header from '$lib/components/common/Header';
 	import Footer from '$lib/components/common/Footer';
+	import Matrix from '$lib/components/common/Matrix';
 	// type
 	import type { LoadInput } from '@sveltejs/kit';
 	// utils
 	import { httpGetDetails } from '$lib/utils/http.utils';
 	import { formatRoute } from "$lib/utils/route.utils";
 	import { capitalizeFirstLetter } from '$lib/utils/string.utils';
-	
+
 	const formatPageTitle = (path: string, brand: string) => {
 		if (path === "/") {
 			return brand;
@@ -38,8 +39,27 @@
 	<link rel="icon" href={formatRoute("/favicon.png")} />
 	<title>{pageTitle}</title>
 </svelte:head>
+<Matrix />
+<a class="skip" href="#main">Skip to content</a>
 <Header {details} />
-<main>
-  <slot />
+<main id="main" class="page">
+	<div class="inner">
+		<slot />
+	</div>
 </main>
 <Footer {details} />
+
+<style>
+	.skip {
+		position: absolute;
+		left: 16px;
+		top: -48px;
+		z-index: 60;
+		background: var(--green);
+		color: var(--void);
+		padding: 8px 14px;
+	}
+	.skip:focus {
+		top: 12px;
+	}
+</style>

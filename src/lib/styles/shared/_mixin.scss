@@ -1,8 +1,0 @@
-@use "src/lib/styles/_variables" as *;
-
-@mixin line-content() {
-  height: 2px;
-  width: 100%;
-  display: block;
-  background-color: $gray-900;
-}

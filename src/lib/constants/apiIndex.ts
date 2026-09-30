@@ -1,14 +1,22 @@
 export const endpoints = {
+	'Class management and enrolment portal':
+		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/8834476900ec9719194dfe174ef829c6757bf4ad/Class%20management%20and%20enrolment%20portal.json',
+	'Customer service platform':
+		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/a67cd3c9846dfbf726e0697379c9dc3164f8cdfa/Customer%20service%20platform.json',
 	'Occupational pension portal':
-		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/a93d32b9923392cf9b990dc3b5e716abd5ad372f/Occupational%20pension%20portal',
+		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/0f690cdd9543903f76f9851ef355fca190d1a4ed/Occupational%20pension%20portal',
 	'Private pension portal':
-		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/71336b150a5e2f890ccc93666b3fab6c0dc5a087/Private%20pension%20portal.json',
+		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/17f7a0138642fae6114118880f63d3e73187c132/Private%20pension%20portal.json',
+	'React components library':
+		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/184514593517fb1ed6fc40eca237666d20f92257/React%20components%20library.json',
+	'User roles and management portal':
+		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/7f1d5233390e8d0f6844e471823d648fec39d220/User%20roles%20and%20management%20portal.json',
 	contacts:
-		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/9b1cb5fe31e014ff61428992312a9dfc4da0e15c/contacts.json',
+		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/80ee27d18f9c193b172f3877cbad3c3f31144251/contacts.json',
 	details:
 		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/97ae0666c256f134efe08cd79c3bb4eb2daf9140/details.json',
 	experiences:
-		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/89cfdbd239fc101203ca94c017ee459352e99603/experiences.json',
+		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/c442bb5f65e5c3bcc91212b662a46fcc92e533e0/experiences.json',
 	skills:
 		'https://gist.githubusercontent.com/kherP/b46b7b8695b6e87db6397127d473b2ca/raw/2f11f6c29a77399e9535952aab7ae1ca770108d1/skills.json'
 };

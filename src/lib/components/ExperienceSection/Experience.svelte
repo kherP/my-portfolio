@@ -1,102 +1,41 @@
 <script lang="ts">
   import type { HeaderElements } from "$lib/@types/header";
   import routes from "$lib/constants/routes";
-  import ChevronRightRound from "../common/ChevronRightRound";
+  import { projectArt } from "$lib/constants/profile";
+  import Art from "../common/Art";
   import Chips from "../common/Chips";
+  import { reveal, tilt } from "$lib/utils/motion";
   export let details: ExperienceItem;
-  export let reverted: boolean = false;
-  export let headerTag: HeaderElements; 
-  const { image: src, name, description, techstack }: ExperienceItem = details;
+  export let index: number;
+  export let headerTag: HeaderElements;
+  const { name, description, techstack }: ExperienceItem = details;
+  const href = routes.experience.replace(":id", name);
+  const rotation = [-3, 2.5, -1.5, 3, -2.5, 1.5][index % 6];
 </script>
 
-<article class={reverted ? 'reverted' : ''}>
-  <figure>
-    <img {src} alt={name} />
-  </figure>
-  <div class="content">
-    <section aria-label={`Description of ${name}`}>
-      <svelte:component this={headerTag} ref="h3">
-        {name}
-      </svelte:component>
-      <section aria-label={`Tech stack of ${name}`}>
-        <Chips list={techstack} />
-      </section>
-      <p>{@html description}</p> <!-- // TODO: to set max height -->
-      <a href={routes.experience.replace(":id", name)}>
-        <span>Learn more about this case</span>
-        <span class="icon-wrapper">
-          <ChevronRightRound />
-        </span>
-      </a>
-    </section>
+<article class="card" style="--r:{rotation}deg" use:reveal={{ glitch: true, delay: index % 2 }}>
+  <a {href} sveltekit:prefetch tabindex="-1" aria-hidden="true">
+    <figure class="frame" use:tilt>
+      <div class="ph"><Art kind={projectArt[name] ?? "occupational"} /></div>
+    </figure>
+  </a>
+  <div class="cap">
+    <span class="num">{String(index + 1).padStart(2, "0")}</span>
+    <svelte:component this={headerTag} class="card-title">{name}</svelte:component>
+    <p>{@html description}</p>
+    <Chips list={techstack} />
+    <a class="story" {href} sveltekit:prefetch>read the story<span class="sr-only">: {name}</span></a>
   </div>
 </article>
 
-<style lang="scss">
-  @use 'src/lib/styles/variables' as *;
-  article {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    figure {
-      flex: 1;
-      img {
-        max-width: 100%;
-        width: 100%;
-        height: auto;
-      }
-    }
-    .content {
-      flex: 1;
-      text-align: left;
-      .icon-wrapper {
-        color: $primary-color;
-        :global(svg) {
-          vertical-align: middle;
-          height: 2em;
-          width: 2em;
-        }
-      }
-      :global([ref="h3"]) {
-        font-size: 2em;
-        margin-left: -4em;
-      }
-      a {
-        color: $gray-900;
-      }
-      p {
-        font-size: 1.5em;
-        margin-bottom: 3rem;
-      }
-    }
+<style>
+  .story {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.8125rem;
+    color: var(--green);
+    text-decoration: none;
   }
-  .reverted {
-    flex-direction: row-reverse;
-    .content {
-      text-align: right;
-      :global([ref="h3"]) {
-        margin-left: 0;
-        margin-right: -4em;
-      }
-    }
-  }
-  @media (max-width: $screen-sm) {
-		article, .reverted {
-			flex-direction: column;
-      margin-bottom: 3rem;
-      figure {
-        margin: 0;
-      }
-      .content {
-        text-align: left;
-        :global([ref="h3"]) {
-          margin: .5em 0;
-          font-size: 1.5em;
-        }
-        p {
-          font-size: 1em;
-        }
-      }
-		}
-	}
+  .story::before { content: "▸ "; }
+  .story:hover { color: var(--bright); text-shadow: var(--glow); }
 </style>

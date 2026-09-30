@@ -2,17 +2,9 @@
   import Chip from "./Chip.svelte";
   export let list: string[] = [];
 </script>
-<ul>
+
+<ul class="tags" aria-label="Tech stack">
   {#each list as item}
-   <Chip>{item}</Chip>
+    <Chip>{item}</Chip>
   {/each}
 </ul>
-
-<style lang="scss">
-  ul {
-    display: flex;
-    margin-top: 3rem;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-</style>

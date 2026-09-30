@@ -1,45 +1,29 @@
 <script lang="ts">
   import type { HeaderElements } from "$lib/@types/header";
   import { H1, H2 } from "../HeaderElements";
+  import { reveal } from "$lib/utils/motion";
   export let showMore: boolean = false;
   export let viewMorePath: string = "";
   export let viewMoreText: string = "View more";
-  const headerTag: HeaderElements = showMore ? H2 : H1;
+  export let headerTag: HeaderElements = showMore ? H2 : H1;
+  // terminal command shown above the heading, e.g. "ls ./work"
+  export let cmd: string = "";
 </script>
 
-<section>
-  <svelte:component this={headerTag} ref="header">
-    <slot name="header" />
-  </svelte:component>
+<section class="block">
+  <header class="block-head" use:reveal>
+    {#if cmd}<p class="cmd">{cmd}</p>{/if}
+    <svelte:component this={headerTag} class="block-title glow" data-decode>
+      <slot name="header" />
+    </svelte:component>
+    <slot name="lede" />
+  </header>
   <slot name="content">
-    <span>No content</span>
+    <p>No content</p>
   </slot>
   {#if showMore}
-    <footer>
-      <a sveltekit:prefetch class="show-more-link" href={viewMorePath}>{viewMoreText}</a>
-    </footer>
+    <p class="more">
+      <a sveltekit:prefetch class="more-link" href={viewMorePath}>{viewMoreText}</a>
+    </p>
   {/if}
 </section>
-
-<style type="scss">
-  @use 'src/lib/styles/variables' as *;
-
-  section {
-    margin: 3rem 0 5rem;
-    text-align: center;
-    :global([ref=header]) {
-      font-size: $font-size-h2;
-      font-weight: 200;
-      text-align: left;
-    }
-    footer {
-      margin: 3em;
-      > .show-more-link {
-        padding: 1rem 2em;
-        border: 1px solid $primary-color;
-        color: $primary-color;
-        margin: auto;
-      }
-    }
-  }
-</style>
